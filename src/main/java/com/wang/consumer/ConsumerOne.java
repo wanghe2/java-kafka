@@ -11,9 +11,7 @@ import kafka.consumer.ConsumerConfig;
 import kafka.consumer.ConsumerIterator;
 import kafka.consumer.KafkaStream;
 import kafka.javaapi.consumer.ConsumerConnector;
-/**
-* @author leicui bourne_cui@163.com
-*/
+
 public class ConsumerOne extends Thread
 {
     private final ConsumerConnector consumer;
@@ -42,7 +40,7 @@ public class ConsumerOne extends Thread
         KafkaStream<byte[], byte[]> stream = consumerMap.get(topic).get(0);
         ConsumerIterator<byte[], byte[]> it = stream.iterator();
         while (it.hasNext()) {
-            System.err.println("receive：" + new String(it.next().message()));
+            System.err.println("cunstomer1 receive：" + new String(it.next().message()));
             try {
                 sleep(3000);
             } catch (InterruptedException e) {

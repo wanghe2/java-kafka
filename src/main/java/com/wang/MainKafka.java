@@ -1,6 +1,7 @@
 package com.wang;
 
 import com.wang.consumer.ConsumerOne;
+import com.wang.consumer.ConsumerTwo;
 import com.wang.produce.KafkaProducer;
 import com.wang.util.KafkaProperties;
 
@@ -15,5 +16,7 @@ public class MainKafka
         producerThread.start();
         ConsumerOne consumerThread = new ConsumerOne(KafkaProperties.topic);
         consumerThread.start();
+        ConsumerTwo consumerThread2 = new ConsumerTwo(KafkaProperties.topic);
+        consumerThread2.start();
     }
 }
